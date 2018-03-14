@@ -10,6 +10,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
    def create
      super
      user.sendmail
+     user = user.add_role :admin
    end
 
   # GET /resource/confirmation?confirmation_token=abcdef
